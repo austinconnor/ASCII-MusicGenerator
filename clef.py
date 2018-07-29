@@ -1,7 +1,10 @@
 import string
 import stringManager as sm
 
-staff_begin = '''
+staff_begin = ''' 
+   
+   
+ / 
 |+-
 || 
 ||-
@@ -10,34 +13,50 @@ staff_begin = '''
 || 
 ||-
 || 
-|+-'''
+|+-
+ \\ 
+   
+   
+ '''
 
 def setClef(clef):
     if(clef == "treble"): #PROGRESS
         
-        string = '''       /\\
+        string = ''' 
+
+
+    /\\   
 ----|-|--
-    |/
+    |/   
 ----|----
-   /|
+   /|    
 --/-|----
- |  | _
+ |  | _  
 -|-(@)-)-
-  \ | /
+  \ | /  
 ----|----
-    |
-  (_|'''
+    |    
+  (_|
+  
+ '''
   
     elif(clef == "bass"):
-        string ='''
+        string =''' 
+       
+       
+       
 -------
- ,-.
+ ,-.   
 -o  |:-
-   /
+   /   
 --/----
- /
+ /     
 -------
-
--------'''
+       
+-------
+       
+       
+       
+ '''
     master = sm.concat(staff_begin.splitlines(),string.splitlines())
     return master
