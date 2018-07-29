@@ -20,7 +20,7 @@ staff_begin = '''
  '''
 
 def setClef(clef):
-    if(clef == "treble"): #PROGRESS
+    if(clef == "treble"):
         
         string = ''' 
 
