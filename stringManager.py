@@ -5,10 +5,9 @@ def concat(first,second):
     temp = ""
     #if the lists are the same length
     
-    print("First: "+str(len(first)))
-    #print(first)
-    print("Second: "+str(len(second)))
-    #print(second)
+    # print("First: "+str(len(first)))
+    # print("Second: "+str(len(second)))
+   
     if(len(first) == len(second)):
         
         for i in range(0, len(second)):

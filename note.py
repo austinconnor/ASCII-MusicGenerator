@@ -7,57 +7,70 @@ BassNotes = ["D4", "C4", "B3", "A3", "G3", "F3", "E3", "D3", "C3", "B2", "A2", "
 
 def createNote(pitch, duration, clef, master):
     #trying to automate the note building process
-    note = [" \n",
-            "     \n",
-            "     \n",
-            "     \n",
-            "-----\n",
-            "     \n",
-            "-----\n",
-            "     \n",
-            "-----\n",
-            "     \n",
-            "-----\n",
-            "     \n",
-            "-----\n",
-            "     \n",
-            "     \n",
-            "     \n",
+    #duration, eighth = 1, quarter = 2, half = 4, dotted half = 6, whole = 8
+    note = [" ",
+            "     ",
+            "     ",
+            "     ",
+            "-----",
+            "     ",
+            "-----",
+            "     ",
+            "-----",
+            "     ",
+            "-----",
+            "     ",
+            "-----",
+            "     ",
+            "     ",
+            "     ",
             " "]
+    
     index = 0
-
+    s = ""
     if(clef == "treble"):
         index = TrebleNotes.index(pitch)+1
     elif(clef == "bass"):
         index = BassNotes.index(pitch)+1
 
-    for i in range(0,17):
-        if(i == 0):
-            note += ' \n'
-
-        if(i == index and i % 2 == 0 and duration == 4):
-            note += '-(x)-'
-        elif(i <= 3):
-            note += 5*' '
-            note += '\n'
-        elif(i > 3 and i < 13 and i % 2 == 0):
-            note += 5*'-'
-            note += '\n'
-        elif(i < 3 and i < 13 and i % 2 != 0):
-            note += 5*' '
-            note += '\n'
-        elif(i >= 13):
-            note += 5*' '
-            note += '\n'
-        elif(i == 16):
-            note += ' '
+    if(index < 8):
+        if(duration == 1):
+            note[index] = note[index][:1] + "(x)" + note[index][4:]
+            note[index+1] = note[index+1][:1] + "|" + note[index+1][2:]
+            note[index+2] = note[index+2][:1] + "|" + note[index+2][2:]
+            note[index+2] = note[index+2][:2]+"/" + note[index+2][3:]
+        elif(duration == 2):
+            note[index] = note[index][:1] + "(x)" + note[index][4:]
+            note[index+1] = note[index+1][:1] + "|" + note[index+1][2:]
+            note[index+2] = note[index+2][:1] + "|" + note[index+2][2:]
+        elif(duration == 4):
+            note[index] = note[index][:1] + "( )" + note[index][4:]
+            note[index+1] = note[index+1][:1] + "|" + note[index+1][2:]
+            note[index+2] = note[index+2][:1] + "|" + note[index+2][2:]
+        elif(duration == 8):
+            note[index] = note[index][:1] + "( )" + note[index][4:]
+    elif(index >= 8):
+        if(duration == 1):
+            note[index] = note[index][:1] + "(x)" + note[index][4:]
+            note[index-1] = note[index-1][:3] + '|' + note[index-1][4:]
+            note[index-2] = note[index-2][:3] + '|' + note[index-2][4:]
+            note[index-2] = note[index-2][:4] + '\\' + note[index-2][5:]
+        elif(duration == 2):
+            note[index] = note[index][:1] + "(x)" + note[index][4:]
+            note[index-1] = note[index-1][:3] + '|' + note[index-1][4:]
+            note[index-2] = note[index-2][:3] + '|' + note[index-2][4:]
+        elif(duration == 4):
+            note[index] = note[index][:1] + "( )" + note[index][4:]
+            note[index-1] = note[index-1][:3] + '|' + note[index-1][4:]
+            note[index-2] = note[index-2][:3] + '|' + note[index-2][4:]
+        elif(duration == 8):
+            note[index] = note[index][:1] + "( )" + note[index][4:]
+            
+    
+       
             
 
-        
-
-
-
-    return
+    return(sm.concat(master.splitlines(), '\n'.join(note).splitlines()))
 
 
 
@@ -67,9 +80,9 @@ def createNote(pitch, duration, clef, master):
 #sketching notes
 #---|\-
 #   |
-#-(x)--
-#   |
-#---|--
+#-(x)-
+# |   
+#\|----
 #
 #-( )--
 #
