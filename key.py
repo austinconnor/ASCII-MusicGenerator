@@ -1,10 +1,15 @@
 import string
 import stringManager as sm
 
+k = ""
+
+def getKey():
+    return k 
+
 def setKey(key,clef,master):
 
     string = ""
-
+    k = key
     if (key == 'C'):
         string = ''' 
      

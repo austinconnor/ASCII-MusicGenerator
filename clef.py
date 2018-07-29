@@ -18,8 +18,12 @@ staff_begin = '''
    
    
  '''
+c = ""
+def getClef():
+    return c
 
 def setClef(clef):
+    c = clef
     if(clef == "treble"):
         
         string = ''' 

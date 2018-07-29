@@ -28,6 +28,7 @@ def main():
     choice = input("> ")
     master = ts.setTime(choice, master)
     print(master)
+    
 
 if __name__ == '__main__':
     main()

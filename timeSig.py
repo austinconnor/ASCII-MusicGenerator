@@ -4,6 +4,9 @@ import stringManager as sm
 beats = 0
 note = 0
 
+def getTime():
+    return [beats, note]
+
 def setTime(time, master):
     if(time == "4/4"):
         beats = 4
