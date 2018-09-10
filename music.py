@@ -9,7 +9,7 @@ import stringManager
 #ASCII ART CREDIT: http://www.chris.com/ascii/index.php?art=music/musical%20notation
 
 def main():
-    print("Welcome to Connor's ASCII sheet music generator!")
+    print("\nWelcome to Connor's ASCII sheet music generator!")
     print("------------------------------------------------")
     print("Choose a clef: (1) Treble")
     print("               (2) Bass  ")
@@ -33,19 +33,10 @@ def main():
     master = ts.setTime(choice, master)
     print(master)
     choice = input("Press ENTER to generate music!")
-    #master = generate.gen(clef, key, time, master)
-    master = note.createNote("F4", 2, clef, master)
-    master = note.createNote("G4", 2, clef, master)
-    master = note.createNote("A4", 2, clef, master)
-    master = note.createNote("B4", 2, clef, master)
-    master = generate.barLine(master)
-    master = note.createNote("C5", 2, clef, master)
-    master = note.createNote("D5", 2, clef, master)
-    master = note.createNote("E5", 2, clef, master)
-    master = note.createNote("F5", 2, clef, master)
-    master = generate.DbarLine(master)
 
-    print(master)
+    master = generate.gen(clef, key, time, master) # music is generated here
+
+    print(master) #prints final sheet music
 
     
 
