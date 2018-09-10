@@ -10,6 +10,7 @@ TODO: <br />
 Add support for 6/8 time signature <br />
 Refactor note.py code (if at all possible) <br />
 Automate key generation, instead of hard-coding it <br />
+Output a MIDI file that goes along with the generated sheet music <br />
 ----------------------------------------------------<br />
 
 Written by Connor Austin <br />
