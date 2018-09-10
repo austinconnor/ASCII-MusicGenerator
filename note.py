@@ -8,7 +8,7 @@ BassNotes = ["D4", "C4", "B3", "A3", "G3", "F3", "E3", "D3", "C3", "B2", "A2", "
 
 def getRoot(clef, key):
     root = ""
-    rCount = 0 #counts occurence of note
+    rCount = 0 #counts occurence of root note
     k = key[0]
     if(clef == "treble"): # Getting range of usable notes
         notes = TrebleNotes
@@ -157,21 +157,3 @@ def createNote(pitch, duration, clef, master):
                 
     
     return(sm.concat(master.splitlines(), '\n'.join(note).splitlines()))
-
-
-
-#
-#Tie
-#
-#-----|-----
-#  /--|--\
-#-(x)-|-(x)-
-# |   | | 
-#-|---|-|---
-#     |
-#-----|-----
-#     |
-#-----|-----
-#
-#
-#
