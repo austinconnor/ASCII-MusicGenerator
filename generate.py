@@ -16,7 +16,6 @@ def gen(clef, key, time, master, measures):
     # beats for measures in that time signature, aka. how many eighth notes there are
     beatsPerMeasure = (int(8/int(time[2]) * int(time[0])))
     beats = beatsPerMeasure * measures #can expand number of measures here
-    print(beats)
     # gonna add settings to randomize note duration or set it manually (keep it static)
     # Find root note
     root = n.getRoot(clef ,key)
