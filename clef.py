@@ -27,9 +27,9 @@ def setClef(clef):
     if(clef == "treble"):
         
         string = ''' 
-
-
-    /\\   
+         
+         
+    /\\  
 ----|-|--
     |/   
 ----|----
@@ -40,8 +40,8 @@ def setClef(clef):
   \ | /  
 ----|----
     |    
-  (_|
-  
+  (_|    
+         
  '''
   
     elif(clef == "bass"):
