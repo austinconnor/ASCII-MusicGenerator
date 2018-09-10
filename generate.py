@@ -60,7 +60,7 @@ def barLine(master):
    
    
    
--|-
+-┬-
  | 
 -|-
  | 
@@ -68,7 +68,7 @@ def barLine(master):
  | 
 -|-
  | 
--|-
+-┴-
    
    
    
@@ -81,7 +81,7 @@ def DbarLine(master):
    
    
    
--|┐
+-┬┐
  ||
 -||
  ||
@@ -89,7 +89,7 @@ def DbarLine(master):
  ||
 -||
  ||
--|┘
+-┴┘
    
    
    
