@@ -5,7 +5,7 @@ import random as r
 
 
 
-def gen(clef, key, time, master):
+def gen(clef, key, time, master, measures):
     r.seed()
     totalBeats = 0
     durations = [1,2,4,8] # need to add 3 and 6
@@ -13,9 +13,9 @@ def gen(clef, key, time, master):
         notes = n.getTreble()
     elif(clef == "bass"):
         notes = n.getBass()
-    # beats for 4 measures in that time signature, aka. how many eighth notes there are
+    # beats for measures in that time signature, aka. how many eighth notes there are
     beatsPerMeasure = (int(8/int(time[2]) * int(time[0])))
-    beats = beatsPerMeasure * 4
+    beats = beatsPerMeasure * measures #can expand number of measures here
     print(beats)
     # gonna add settings to randomize note duration or set it manually (keep it static)
     # Find root note

@@ -27,14 +27,16 @@ def main():
     key = choice
     master = k.setKey(choice,clef,master) #sets key, adds key signature
     print(master)
-    print("Enter a time signature: (i.e. '4/4', '3/4', '6/8')")
+    print("Enter a time signature: (i.e. '4/4', '3/4', '2/4')")
     choice = input("> ")
     time = choice
     master = ts.setTime(choice, master)
     print(master)
+    print("Enter the amount of measures you want to generate")
+    measures = int(input("> "))
     choice = input("Press ENTER to generate music!")
 
-    master = generate.gen(clef, key, time, master) # music is generated here
+    master = generate.gen(clef, key, time, master, measures) # music is generated here
 
     print(master) #prints final sheet music
 

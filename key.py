@@ -1,15 +1,13 @@
 import string
 import stringManager as sm
 
-k = ""
-
 def getKey():
     return k 
 
 def setKey(key,clef,master):
 
     string = ""
-    k = key
+    # WILL AUTOMATE THIS PROCESS LATER
     if (key == 'C'):
         string = ''' 
      
@@ -79,6 +77,7 @@ def setKey(key,clef,master):
 -------
        
 -------
+       
        
        
  '''
