@@ -117,7 +117,7 @@ def createNote(pitch, duration, clef, master):
                 note[index-1] = note[index-1][:3] + '|' + note[index-1][4:]
                 note[index-2] = note[index-2][:3] + '|' + note[index-2][4:]
             elif(duration == 4):
-                note[index] = note[index][:1] + "-( )-"
+                note[index] = "-( )-"
                 note[index-1] = note[index-1][:3] + '|' + note[index-1][4:]
                 note[index-2] = note[index-2][:3] + '|' + note[index-2][4:]
             elif(duration == 8):
@@ -138,6 +138,7 @@ def createNote(pitch, duration, clef, master):
                 note[index-2] = note[index-2][:3] + '|' + note[index-2][4:]
             elif(duration == 8):
                 note[index] = note[index][:1] + "( )" + note[index][4:]
+                note[index-1] = "-----"
         else:
             if(duration == 1):
                 note[index] = note[index][:1] + "(x)" + note[index][4:]
