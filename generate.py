@@ -7,6 +7,11 @@ import random as r
 
 def gen(clef, key, time, master, measures):
     r.seed()
+    #dis is the maximum number of diatonic steps between notes
+    dis = 4
+    MAXIND = 14
+    MININD = 0
+
     totalBeats = 0
     durations = [1,2,4,8] # need to add 3 and 6
     if(clef == "treble"): # Getting range of usable notes
@@ -19,7 +24,9 @@ def gen(clef, key, time, master, measures):
     # gonna add settings to randomize note duration or set it manually (keep it static)
     # Find root note
     root = n.getRoot(clef ,key)
+    ind = notes.index(root)
     leftInMeasure = beatsPerMeasure
+
     while(totalBeats < beats):
 
         dif = beats - totalBeats
@@ -36,7 +43,15 @@ def gen(clef, key, time, master, measures):
                 leftInMeasure -= dur
                 break
             else:
-                pitch = notes[r.randint(0,14)]
+                if(ind == MININD):
+                    ind = r.randint(MININD, ind+dis)
+                elif(ind == MAXIND):
+                    ind = r.randint(ind-dis, MAXIND)
+                else:
+                    ind = r.randint(ind-dis, ind+dis)
+                if(ind < MININD): ind = MININD
+                if(ind > MAXIND): ind = MAXIND
+                pitch = notes[ind]
                 totalBeats += dur
                 leftInMeasure -= dur
                 break
