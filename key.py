@@ -278,7 +278,7 @@ def setKey(key,clef,master):
 ---------------
                
                
-
+               
  '''
 
     elif(clef == 'bass'): #BASS CLEF
